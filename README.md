@@ -1,109 +1,108 @@
 # Sistem Pengelolaan Servis Laptop
 
-> Aplikasi berbasis **Command Line Interface (CLI)** menggunakan **Java** dengan menerapkan konsep **Pemrograman Berorientasi Objek (PBO)**.
-
 ---
 
-Program ini merupakan aplikasi berbasis **Command Line Interface (CLI)** yang dibuat menggunakan bahasa pemrograman **Java** dengan menerapkan konsep **Pemrograman Berorientasi Objek (PBO)**.
+Program ini merupakan aplikasi berbasis **Command Line Interface (CLI)** yang dibuat menggunakan bahasa pemrograman **Java** dengan menerapkan konsep **Pemrograman Berorientasi Objek (PBO)**. Program ini dibuat untuk memenuhi tugas pada mata kuliah Pemrograman Berorientasi Objek.
 
 ---
 
 ## Identitas Mahasiswa
 
 **Nama:** Ghea Aisyah Windraswari  
-**NIM:** 2509116022  
+**NIM:** 2509116022
+**Program Studi:** Sistem Informasi
+**Instansi:** Universitas Mulawarman
 
 ---
 
-## 📌 1. Studi Kasus
+## 1. Studi Kasus
 
 ### Sistem Pengelolaan Servis Laptop
 
-Studi kasus yang dipilih adalah **Sistem Pengelolaan Servis Laptop**. Program ini dibuat untuk membantu proses pencatatan data pelanggan, data perangkat atau laptop, serta data servis laptop.
+Program yang dibuat adalah **Sistem Pengelolaan Servis Laptop**. Program ini digunakan untuk membantu mencatat data pelanggan, data laptop, dan data servis dalam satu sistem sederhana.
 
-Program dijalankan melalui terminal atau Command Line Interface (CLI). Pengguna dapat melakukan beberapa proses pengelolaan data, seperti menambahkan data, menampilkan data, mengubah data, menghapus data, dan mencari data servis.
+Program dijalankan melalui **Command Line Interface (CLI)** atau terminal. Melalui menu yang tersedia, pengguna dapat menambahkan data servis, melihat data yang sudah tersimpan, mengubah data, menghapus data, dan mencari data berdasarkan ID servis.
 
-Program ini dibuat menggunakan konsep Pemrograman Berorientasi Objek sehingga data dan fungsi program dibagi ke dalam beberapa class yang memiliki tugas masing-masing.
+Dalam pembuatannya, program menggunakan konsep **Pemrograman Berorientasi Objek (PBO)**. Data dan proses program dibagi ke dalam beberapa class agar setiap class memiliki tugas yang lebih jelas.
 
 ### Fitur Program
 
-Program memiliki beberapa fitur utama, yaitu:
+Program ini memiliki beberapa fitur utama, yaitu:
 
-1. **Tambah Data Servis**  
-   Digunakan untuk memasukkan data pelanggan, laptop, dan servis baru.
+1. **Tambah Data Servis**
+   Fitur ini digunakan untuk memasukkan data pelanggan, laptop, dan informasi servis.
 
-2. **Tampilkan Data Servis**  
-   Digunakan untuk melihat seluruh data servis yang telah tersimpan.
+2. **Tampilkan Data Servis**
+   Fitur ini digunakan untuk melihat data servis yang sudah dimasukkan ke dalam program.
 
-3. **Ubah Data Servis**  
-   Digunakan untuk mengubah informasi servis berdasarkan ID servis.
+3. **Ubah Data Servis**
+   Fitur ini digunakan untuk mengubah data servis berdasarkan ID servis yang dipilih.
 
-4. **Hapus Data Servis**  
-   Digunakan untuk menghapus data servis berdasarkan ID servis dengan konfirmasi terlebih dahulu.
+4. **Hapus Data Servis**
+   Fitur ini digunakan untuk menghapus data servis. Sebelum data dihapus, pengguna akan diminta melakukan konfirmasi.
 
-5. **Cari Data Servis**  
-   Digunakan untuk mencari data servis berdasarkan ID servis.
+5. **Cari Data Servis**
+   Fitur ini digunakan untuk mencari data servis berdasarkan ID servis.
 
-6. **Keluar**  
-   Digunakan untuk mengakhiri program.
+6. **Keluar**
+   Digunakan untuk mengakhiri penggunaan program.
 
-Selain fitur utama tersebut, program juga menggunakan validasi input agar data yang dimasukkan tidak kosong dan sesuai dengan tipe data yang dibutuhkan.
+Selain fitur tersebut, program juga memiliki beberapa validasi input. Validasi ini digunakan untuk mengurangi kesalahan saat pengguna memasukkan data, misalnya ketika data masih kosong atau memasukkan nilai yang tidak sesuai.
 
 ---
 
-## 🧩 2. Struktur Class
+## 2. Struktur Class
 
-Program terdiri dari beberapa class yang memiliki fungsi berbeda.
+Program ini dibagi menjadi beberapa class agar data dan fungsi di dalam program lebih terorganisir. Setiap class mempunyai peran yang berbeda sesuai dengan data yang dikelola.
 
-### 🔹 Class yang Digunakan
+### ◆ Class yang Digunakan
 
-- **Perangkat** → Superclass yang menyimpan atribut umum perangkat.
-- **Laptop** → Subclass dari Perangkat yang memiliki atribut tambahan berupa kerusakan.
-- **Pelanggan** → Menyimpan data pelanggan.
-- **Servis** → Menyimpan data servis laptop.
-- **ManajemenServisLaptop** → Class utama yang menjalankan program dan menu CLI.
+Class yang digunakan dalam program ini adalah:
 
-Struktur class dapat digambarkan sebagai berikut:
+* **Perangkat** → menyimpan data umum yang dimiliki oleh perangkat.
+* **Laptop** → merupakan turunan dari class `Perangkat` dan memiliki tambahan data berupa kerusakan.
+* **Pelanggan** → menyimpan informasi mengenai pelanggan.
+* **Servis** → menyimpan informasi mengenai proses servis.
+* **ManajemenServisLaptop** → menjadi class utama yang menjalankan menu dan proses program.
+
+Struktur hubungan class pada program dapat dilihat pada diagram berikut:
 
 ```text
               Perangkat
              Superclass
-                  ▲
-                  │
-                  │ extends
-                  │
-                Laptop
-               Subclass
+                 ▲
+                 │
+              extends
+                 │
+               Laptop
+              Subclass
 
 
-             Pelanggan
+              Pelanggan
 
                 Servis
 
                   │
-                  │
                   ▼
-       ManajemenServisLaptop
-            Main Program
+        ManajemenServisLaptop
+             Main Program
 ```
 
-`Perangkat` dan `Laptop` memiliki hubungan **inheritance**, sedangkan `Pelanggan` dan `Servis` merupakan class yang berdiri sendiri dan digunakan oleh class utama.
+Class `Laptop` memiliki hubungan inheritance dengan `Perangkat`. Sementara itu, class `Pelanggan` dan `Servis` digunakan untuk menyimpan data yang dibutuhkan dalam proses pengelolaan servis. Semua class tersebut kemudian digunakan oleh class utama untuk menjalankan program.
 
 ---
 
-## 📚 3. Penjelasan Masing-Masing Class
+## 3. Penjelasan Masing-Masing Class
 
 ### 3.1 `Perangkat`
 
-Class `Perangkat` merupakan **superclass** atau class induk.
-
-Class ini digunakan untuk menyimpan atribut yang bersifat umum dan dapat dimiliki oleh berbagai jenis perangkat.
+Class `Perangkat` digunakan sebagai class induk atau **superclass**. Saya membuat class ini untuk menyimpan data yang masih bersifat umum dan nantinya dapat digunakan oleh jenis perangkat lain.
 
 Atribut yang terdapat pada class `Perangkat` yaitu:
 
-- `idPerangkat`
-- `merk`
-- `tipe`
+* `idPerangkat`
+* `merk`
+* `tipe`
 
 Contoh kode:
 
@@ -148,19 +147,17 @@ public class Perangkat {
 }
 ```
 
----
-
 ### 3.2 `Laptop`
 
-Class `Laptop` merupakan **subclass** dari class `Perangkat`.
+Class `Laptop` merupakan turunan dari `Perangkat`. Karena laptop memiliki data umum seperti ID, merk, dan tipe, data tersebut tidak perlu dibuat ulang di class `Laptop`.
 
-Hubungan inheritance diterapkan menggunakan keyword:
+Untuk membuat hubungan tersebut, digunakan keyword `extends`.
 
 ```java
 extends Perangkat
 ```
 
-Class `Laptop` mewarisi atribut dan method dari class `Perangkat`, kemudian memiliki atribut tambahan yaitu `kerusakan`.
+Selain mewarisi data dari `Perangkat`, class `Laptop` juga memiliki atribut tambahan yaitu `kerusakan`.
 
 Contoh kode:
 
@@ -186,20 +183,20 @@ public class Laptop extends Perangkat {
 }
 ```
 
-Dengan demikian, class `Laptop` tidak perlu mendeklarasikan kembali `idPerangkat`, `merk`, dan `tipe` karena atribut tersebut sudah dimiliki oleh superclass `Perangkat`.
+Dengan cara ini, atribut `idPerangkat`, `merk`, dan `tipe` cukup dibuat di class `Perangkat`, sedangkan `Laptop` hanya menambahkan atribut yang memang khusus dibutuhkan, yaitu `kerusakan`.
 
 ---
 
 ### 3.3 `Pelanggan`
 
-Class `Pelanggan` digunakan untuk menyimpan informasi pelanggan yang melakukan servis laptop.
+Class `Pelanggan` digunakan untuk menyimpan data orang yang melakukan servis laptop.
 
-Atribut yang digunakan yaitu:
+Data yang disimpan terdiri dari:
 
-- `idPelanggan`
-- `nama`
-- `noTelepon`
-- `alamat`
+* `idPelanggan`
+* `nama`
+* `noTelepon`
+* `alamat`
 
 Contoh:
 
@@ -225,14 +222,14 @@ public class Pelanggan {
 
 ### 3.4 `Servis`
 
-Class `Servis` digunakan untuk menyimpan informasi mengenai proses servis laptop.
+Class `Servis` digunakan untuk menyimpan informasi yang berhubungan dengan proses servis laptop.
 
 Atribut yang digunakan yaitu:
 
-- `idServis`
-- `tanggalMasuk`
-- `status`
-- `biaya`
+* `idServis`
+* `tanggalMasuk`
+* `status`
+* `biaya`
 
 Contoh:
 
@@ -256,76 +253,42 @@ public class Servis {
 
 ---
 
-## 🔗 4. Penerapan Inheritance
+## 4. Penerapan Inheritance
 
-Inheritance merupakan konsep PBO yang memungkinkan sebuah class mewarisi atribut dan method dari class lain.
+Pada program ini, inheritance digunakan pada class `Perangkat` dan `Laptop`. Saya menggunakan `Perangkat` sebagai superclass karena terdapat beberapa data yang dapat digunakan oleh class `Laptop`.
 
-Pada program ini, inheritance diterapkan pada hubungan:
+Hubungannya dapat digambarkan seperti berikut:
 
 ```text
 Perangkat
     ▲
     │
- Laptop
+  Laptop
 ```
 
-Class `Perangkat` berperan sebagai **superclass**, sedangkan `Laptop` berperan sebagai **subclass**.
-
-### 💡 Bagian Kode yang Menerapkan Inheritance
-
-Pada class `Laptop` terdapat kode:
+Class `Laptop` dibuat dengan menggunakan keyword `extends`:
 
 ```java
 public class Laptop extends Perangkat {
 ```
 
-Keyword `extends` menunjukkan bahwa class `Laptop` mewarisi isi dari class `Perangkat`.
-
-Selain itu, constructor `Laptop` menggunakan:
+Selain itu, constructor pada `Laptop` menggunakan keyword `super`:
 
 ```java
 super(idPerangkat, merk, tipe);
 ```
 
-Keyword `super` digunakan untuk memanggil constructor dari superclass `Perangkat`.
+Bagian tersebut digunakan untuk memanggil constructor yang ada pada class `Perangkat`.
 
-Dengan penerapan tersebut, atribut:
-
-```text
-idPerangkat
-merk
-tipe
-```
-
-berasal dari superclass `Perangkat`, sedangkan atribut:
-
-```text
-kerusakan
-```
-
-merupakan atribut khusus yang dimiliki oleh class `Laptop`.
-
-Struktur sederhananya:
-
-```text
-Perangkat
-├── idPerangkat
-├── merk
-└── tipe
-       │
-       │ diwariskan
-       ▼
-Laptop
-└── kerusakan
-```
+Dengan penerapan ini, `Laptop` dapat menggunakan data `idPerangkat`, `merk`, dan `tipe` dari `Perangkat`, kemudian menambahkan atribut `kerusakan` yang khusus digunakan untuk data laptop.
 
 ---
 
-## 🏗️ 5. Pembuatan Object
+## 5. Pembuatan Object
 
-Konsep object digunakan ketika program membuat data berdasarkan class yang telah dibuat.
+Object dibuat ketika program mulai membentuk data berdasarkan class yang sudah dibuat sebelumnya.
 
-Contohnya pada class utama:
+Contohnya:
 
 ```java
 Pelanggan pelanggan = new Pelanggan(
@@ -350,19 +313,15 @@ Servis servis = new Servis(
 );
 ```
 
-Kode tersebut membuat object dari class `Pelanggan`, `Laptop`, dan `Servis`.
+Dari kode tersebut, program membuat object `Pelanggan`, `Laptop`, dan `Servis`. Object tersebut kemudian digunakan untuk menyimpan data yang dimasukkan oleh pengguna.
 
-Object `Laptop` dibuat menggunakan constructor subclass dan secara otomatis memanggil constructor superclass `Perangkat` melalui:
-
-```java
-super(idPerangkat, merk, tipe);
-```
+Pada saat object `Laptop` dibuat, constructor dari `Perangkat` juga dipanggil melalui `super()`.
 
 ---
 
-## 📦 6. Penggunaan ArrayList
+## 6. Penggunaan ArrayList
 
-Program menggunakan `ArrayList` untuk menyimpan data selama program berjalan.
+Saya menggunakan `ArrayList` untuk menyimpan data selama program sedang berjalan. Dengan `ArrayList`, program dapat menyimpan lebih dari satu object dalam satu daftar.
 
 Contohnya:
 
@@ -372,9 +331,7 @@ ArrayList<Laptop> daftarLaptop = new ArrayList<>();
 ArrayList<Servis> daftarServis = new ArrayList<>();
 ```
 
-Setiap data yang berhasil dibuat kemudian dimasukkan ke dalam `ArrayList`.
-
-Contohnya:
+Setelah object dibuat, data tersebut dimasukkan ke dalam `ArrayList` menggunakan `add()`.
 
 ```java
 daftarPelanggan.add(pelanggan);
@@ -382,15 +339,15 @@ daftarLaptop.add(laptop);
 daftarServis.add(servis);
 ```
 
-Dengan menggunakan `ArrayList`, program dapat menyimpan lebih dari satu data dan melakukan proses tambah, tampil, ubah, hapus, serta pencarian data.
+Data yang sudah tersimpan kemudian dapat digunakan kembali ketika pengguna ingin menampilkan, mengubah, menghapus, atau mencari data.
 
 ---
 
-## 🖥️ 7. Menu Program
+## 7. Menu Program
 
-Program menggunakan menu utama berbasis CLI.
+Program menggunakan menu sederhana berbasis CLI agar pengguna dapat memilih proses yang ingin dilakukan.
 
-Contoh menu:
+Contoh menu yang ditampilkan:
 
 ```text
 ========================================
@@ -406,7 +363,10 @@ Contoh menu:
 Pilih menu:
 ```
 
-Menu tersebut dibuat menggunakan percabangan `switch-case`.
+Pilihan dari menu diproses menggunakan `switch-case`. Setiap pilihan akan menjalankan method yang sesuai dengan fungsi menu tersebut.
+
+Program juga menggunakan perulangan sehingga setelah satu proses selesai, pengguna dapat kembali ke menu utama tanpa harus menjalankan program dari awal.
+
 
 Contohnya:
 
@@ -441,28 +401,28 @@ switch (pilihan) {
 }
 ```
 
-Menu dijalankan secara berulang menggunakan perulangan sehingga pengguna dapat memilih fitur lain tanpa harus menjalankan ulang program.
-
 ---
 
-## ➕ 8. Proses Tambah Data
+## 8. Proses Tambah Data
 
-Pada menu tambah data, pengguna memasukkan beberapa informasi seperti:
+Pada menu **Tambah Data Servis**, pengguna diminta memasukkan data yang berkaitan dengan pelanggan, laptop, dan servis.
 
-- ID pelanggan
-- Nama pelanggan
-- Nomor telepon
-- Alamat
-- ID laptop/perangkat
-- Merk laptop
-- Tipe laptop
-- Kerusakan
-- ID servis
-- Tanggal masuk
-- Status servis
-- Biaya servis
+Data yang dimasukkan meliputi:
 
-Setelah semua data dimasukkan, program membuat object:
+* ID pelanggan
+* Nama pelanggan
+* Nomor telepon
+* Alamat
+* ID laptop/perangkat
+* Merk laptop
+* Tipe laptop
+* Kerusakan
+* ID servis
+* Tanggal masuk
+* Status servis
+* Biaya servis
+
+Setelah semua data diisi, program membuat object dari class `Pelanggan`, `Laptop`, dan `Servis`.
 
 ```java
 Pelanggan pelanggan = new Pelanggan(...);
@@ -470,19 +430,17 @@ Laptop laptop = new Laptop(...);
 Servis servis = new Servis(...);
 ```
 
-Kemudian object tersebut dimasukkan ke dalam masing-masing `ArrayList`.
+Object yang sudah dibuat kemudian dimasukkan ke dalam `ArrayList` masing-masing.
 
 ---
 
-## 📋 9. Proses Menampilkan Data
+## 9. Proses Menampilkan Data
 
-Data yang telah tersimpan dapat ditampilkan melalui menu **Tampilkan Data Servis**.
+Menu **Tampilkan Data Servis** digunakan untuk melihat data yang sebelumnya sudah dimasukkan.
 
-Program menggunakan perulangan untuk membaca seluruh isi `ArrayList`.
+Program mengambil data yang ada di dalam `ArrayList`, kemudian menampilkannya menggunakan perulangan. Informasi yang ditampilkan mencakup data pelanggan, laptop, dan servis.
 
-Data yang ditampilkan meliputi informasi pelanggan, laptop, dan servis.
-
-Contoh output:
+Contoh hasil yang ditampilkan:
 
 ```text
 ================================ DATA SERVIS ================================
@@ -505,25 +463,23 @@ Biaya        : Rp250000
 
 ---
 
-## ✏️ 10. Proses Mengubah Data
+## 10. Proses Mengubah Data
 
-Menu **Ubah Data Servis** digunakan untuk mengubah informasi servis berdasarkan ID servis.
+Menu **Ubah Data Servis** digunakan ketika ada informasi servis yang ingin diperbarui.
 
-Pengguna memasukkan ID servis yang ingin diubah, kemudian program mencari data tersebut.
+Pertama, pengguna memasukkan ID servis yang ingin diubah. Program kemudian mencari ID tersebut di dalam data yang tersimpan. Jika ID ditemukan, pengguna dapat memasukkan data baru, seperti status dan biaya servis.
 
-Jika data ditemukan, pengguna dapat memasukkan informasi baru seperti status dan biaya servis.
-
-Jika ID tidak ditemukan, program akan memberikan pesan bahwa data tidak tersedia.
+Jika ID yang dimasukkan tidak ada, program akan menampilkan pesan bahwa data servis tidak ditemukan.
 
 ---
 
-## 🗑️ 11. Proses Menghapus Data
+## 11. Proses Menghapus Data
 
-Menu **Hapus Data Servis** digunakan untuk menghapus data berdasarkan ID servis.
+Menu **Hapus Data Servis** digunakan untuk menghapus data servis berdasarkan ID yang dipilih.
 
-Sebelum data dihapus, program memberikan konfirmasi kepada pengguna.
+Sebelum benar-benar menghapus data, program meminta konfirmasi dari pengguna. Hal ini dilakukan agar data tidak langsung terhapus apabila pengguna salah memilih ID.
 
-Contoh:
+Contohnya:
 
 ```text
 Masukkan ID Servis: S001
@@ -533,19 +489,17 @@ Apakah Anda yakin ingin menghapus data ini? (y/n): y
 Data servis berhasil dihapus.
 ```
 
-Konfirmasi digunakan untuk mencegah data terhapus secara tidak sengaja.
+Jika pengguna memberikan konfirmasi, data servis tersebut akan dihapus dari daftar.
 
 ---
 
-## 🔎 12. Proses Pencarian Data
+## 12. Proses Pencarian Data
 
-Program menyediakan fitur pencarian berdasarkan ID servis.
+Program juga menyediakan fitur untuk mencari data servis berdasarkan ID servis.
 
-Pengguna memasukkan ID servis, kemudian program melakukan pencarian pada data yang tersimpan.
+Pengguna cukup memasukkan ID servis yang ingin dicari. Program kemudian memeriksa data yang ada di dalam `ArrayList`.
 
-Jika ditemukan, informasi servis akan ditampilkan.
-
-Jika tidak ditemukan, program memberikan pesan:
+Jika ID ditemukan, informasi servis akan ditampilkan. Sebaliknya, jika ID tidak ditemukan, program akan memberikan pesan:
 
 ```text
 Data servis tidak ditemukan.
@@ -553,13 +507,13 @@ Data servis tidak ditemukan.
 
 ---
 
-## ✅ 13. Validasi Input
+## 13. Validasi Input
 
-Program juga menerapkan validasi input untuk mengurangi kesalahan saat pengguna memasukkan data.
-
-Beberapa validasi yang digunakan antara lain:
+Untuk mengurangi kesalahan saat program digunakan, saya menambahkan beberapa validasi pada input.
 
 ### Validasi data kosong
+
+Data tertentu tidak boleh dibiarkan kosong. Jika pengguna tidak mengisi data yang diperlukan, program akan memberikan pesan:
 
 ```text
 Nama tidak boleh kosong!
@@ -567,7 +521,7 @@ Nama tidak boleh kosong!
 
 ### Validasi nomor telepon
 
-Nomor telepon harus berupa angka.
+Nomor telepon diperiksa agar hanya berisi angka.
 
 ```text
 No. Telepon hanya boleh berisi angka!
@@ -575,7 +529,7 @@ No. Telepon hanya boleh berisi angka!
 
 ### Validasi biaya
 
-Biaya servis tidak boleh bernilai negatif.
+Biaya servis tidak boleh menggunakan nilai negatif.
 
 ```text
 Biaya tidak boleh negatif!
@@ -583,13 +537,13 @@ Biaya tidak boleh negatif!
 
 ### Validasi pilihan menu
 
-Jika pengguna memasukkan menu yang tidak tersedia:
+Jika pengguna memasukkan pilihan menu yang tidak tersedia, program akan memberikan pesan:
 
 ```text
 Pilihan menu tidak tersedia!
 ```
 
-Validasi tersebut membantu agar data yang masuk ke dalam program lebih sesuai dengan kebutuhan sistem.
+Validasi tersebut dibuat agar input yang masuk ke program lebih sesuai dengan data yang dibutuhkan dan mengurangi kemungkinan terjadi kesalahan saat program dijalankan.
 
 ---
 
@@ -601,7 +555,7 @@ Berikut adalah screenshot yang digunakan untuk menunjukkan bahwa program dapat d
 
 <img width="245" height="140" alt="image" src="https://github.com/user-attachments/assets/ed230f8a-2ddf-48c3-b6a0-903d4462bf7b" />
 
-Gambar menunjukkan menu utama program yang menyediakan pilihan untuk menambah, menampilkan, mengubah, menghapus, mencari data, dan keluar dari program.
+Gambar di bawah menunjukkan tampilan awal program. Pada menu ini terdapat beberapa pilihan yang dapat digunakan untuk mengelola data servis, seperti menambah, menampilkan, mengubah, menghapus, mencari data, dan keluar dari program.
 
 ---
 
@@ -609,7 +563,7 @@ Gambar menunjukkan menu utama program yang menyediakan pilihan untuk menambah, m
 
 <img width="227" height="287" alt="image" src="https://github.com/user-attachments/assets/0f2519b7-c3ef-46d3-8b62-05f76394f874" />
 
-Gambar menunjukkan proses ketika pengguna memasukkan data pelanggan, laptop, dan servis.
+Gambar menunjukkan proses ketika pengguna memasukkan data pelanggan, laptop, dan servis. Setelah data dimasukkan, program menyimpan data tersebut dan menampilkannya.
 
 ---
 
@@ -617,7 +571,7 @@ Gambar menunjukkan proses ketika pengguna memasukkan data pelanggan, laptop, dan
 
 <img width="248" height="248" alt="image" src="https://github.com/user-attachments/assets/1790b9bd-d5e9-47d0-a55f-f15dbd334a6a" />
 
-Gambar menunjukkan data servis yang telah berhasil disimpan dan ditampilkan oleh program.
+Gambar menunjukkan data pelanggan, laptop, dan informasi servis yang telah berhasil disimpan dan ditampilkan oleh program.
 
 ---
 
@@ -625,7 +579,7 @@ Gambar menunjukkan data servis yang telah berhasil disimpan dan ditampilkan oleh
 
 <img width="248" height="226" alt="image" src="https://github.com/user-attachments/assets/170c0418-ba21-4a9d-92e1-10028247f367" />
 
-Gambar menunjukkan proses perubahan data servis berdasarkan ID servis.
+Gambar menunjukkan proses perubahan data servis berdasarkan ID servis. Setelah diubah, data ditampilkan kembali oleh program.
 
 ---
 
@@ -633,7 +587,7 @@ Gambar menunjukkan proses perubahan data servis berdasarkan ID servis.
 
 <img width="329" height="214" alt="image" src="https://github.com/user-attachments/assets/c9e712a5-adc4-4e4f-b561-80894a90cef5" />
 
-Gambar menunjukkan fitur pencarian data servis berdasarkan ID servis.
+Gambar menunjukkan fitur pencarian data servis untuk menampilkan data servis berdasarkan ID servis.
 
 ---
 
@@ -641,17 +595,17 @@ Gambar menunjukkan fitur pencarian data servis berdasarkan ID servis.
 
 <img width="251" height="89" alt="image" src="https://github.com/user-attachments/assets/b7ee1ffa-752b-40a6-8be2-5c4e7ff6435a" />
 
-Gambar menunjukkan konfirmasi sebelum data servis dihapus dari sistem.
+Gambar menunjukkan proses penghapusan data dengan memasukkan ID servis yang ingin dihapus. Setelah itu, program meminta konfirmasi sebelum data benar-benar dihapus.
 
 ---
 
-## 🧠 15. Penerapan Konsep PBO
+## 15. Penerapan Konsep PBO
 
-Program ini menerapkan beberapa konsep dasar Pemrograman Berorientasi Objek, yaitu:
+Dalam program ini, beberapa konsep dasar Pemrograman Berorientasi Objek diterapkan secara langsung pada pembuatan sistem.
 
 ### 1. Class
 
-Program memiliki beberapa class seperti:
+Program memiliki beberapa class, yaitu:
 
 ```text
 Perangkat
@@ -661,13 +615,11 @@ Servis
 ManajemenServisLaptop
 ```
 
-Setiap class memiliki fungsi dan data yang berbeda.
+Setiap class dibuat untuk menangani jenis data yang berbeda.
 
 ### 2. Object
 
-Object dibuat dari class menggunakan keyword `new`.
-
-Contoh:
+Object dibuat menggunakan keyword `new`. Contohnya:
 
 ```java
 Laptop laptop = new Laptop(
@@ -678,24 +630,26 @@ Laptop laptop = new Laptop(
 );
 ```
 
+Object tersebut digunakan untuk menyimpan data laptop yang dimasukkan oleh pengguna.
+
 ### 3. Encapsulation
 
-Atribut pada class dibuat menggunakan access modifier `private`.
+Encapsulation diterapkan dengan membuat atribut pada class menggunakan access modifier `private`.
 
-Contoh:
+Contohnya:
 
 ```java
 private String merk;
 private String tipe;
 ```
 
-Data tersebut diakses melalui method getter dan setter.
+Dengan cara ini, atribut tidak dapat diakses secara langsung dari luar class. Untuk mengakses atau mengubah nilainya digunakan getter dan setter.
 
 ### 4. Constructor
 
-Setiap class memiliki constructor yang digunakan untuk memberikan nilai awal pada object.
+Constructor digunakan ketika object dibuat. Constructor membantu memberikan nilai awal pada object sesuai dengan data yang dimasukkan.
 
-Contoh:
+Contohnya pada class `Laptop`:
 
 ```java
 public Laptop(String idPerangkat, String merk,
@@ -707,28 +661,22 @@ public Laptop(String idPerangkat, String merk,
 
 ### 5. Inheritance
 
-Inheritance diterapkan melalui hubungan:
-
-```text
-Perangkat
-    ▲
-    │
- Laptop
-```
-
-Contoh kode:
+Inheritance digunakan pada hubungan antara `Perangkat` dan `Laptop`.
 
 ```java
 public class Laptop extends Perangkat
 ```
 
+Dengan hubungan tersebut, `Laptop` dapat menggunakan atribut dan constructor dari `Perangkat` serta memiliki atribut tambahan berupa `kerusakan`.
+
 ### 6. ArrayList
 
-`ArrayList` digunakan untuk menyimpan kumpulan object selama program berjalan.
+`ArrayList` digunakan untuk menyimpan kumpulan object selama program berjalan. Data yang tersimpan di dalamnya dapat digunakan untuk proses tambah, tampil, ubah, hapus, dan pencarian data.
+
 
 ---
 
-## 🔄 16. Alur Program
+## 16. Alur Program
 
 Alur program secara sederhana adalah:
 
@@ -782,14 +730,10 @@ Program akan terus menampilkan menu sampai pengguna memilih pilihan **6. Keluar*
 
 ---
 
-## 📝 17. Kesimpulan
+## 17. Kesimpulan
 
-Program **Sistem Pengelolaan Servis Laptop** merupakan aplikasi berbasis Command Line Interface yang dibuat menggunakan bahasa pemrograman Java dengan menerapkan konsep Pemrograman Berorientasi Objek.
+Berdasarkan program yang telah dibuat, **Sistem Pengelolaan Servis Laptop** dapat digunakan untuk membantu proses pencatatan dan pengelolaan data pelanggan, laptop, serta servis melalui menu berbasis CLI.
 
-Program memiliki beberapa class, yaitu `Perangkat`, `Laptop`, `Pelanggan`, dan `Servis`, serta class utama `ManajemenServisLaptop`.
+Dalam pembuatan program ini, saya menerapkan beberapa konsep PBO seperti class, object, constructor, encapsulation, inheritance, dan `ArrayList`. Inheritance diterapkan pada hubungan antara `Perangkat` sebagai superclass dan `Laptop` sebagai subclass.
 
-Penerapan inheritance dilakukan dengan menjadikan `Perangkat` sebagai superclass dan `Laptop` sebagai subclass. Class `Laptop` mewarisi atribut umum dari `Perangkat` dan memiliki atribut tambahan berupa `kerusakan`.
-
-Selain inheritance, program juga menerapkan konsep class, object, constructor, encapsulation, ArrayList, percabangan, perulangan, CRUD, pencarian, dan validasi input.
-
-Dengan adanya program ini, proses pengelolaan data pelanggan, laptop, dan servis dapat dilakukan melalui menu yang sederhana dan mudah digunakan.
+Selain konsep PBO, program juga memiliki fitur tambah, tampil, ubah, hapus, dan cari data serta beberapa validasi input. Dari pembuatan program ini, saya dapat memahami bagaimana konsep PBO diterapkan dalam sebuah program yang memiliki proses pengelolaan data secara langsung.
